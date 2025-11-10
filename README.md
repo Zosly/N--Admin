@@ -428,9 +428,8 @@ Les logs incluent :
 
 ### Besoin d'aide ?
 
-- 📧 Email: support@votreserveur.com
-- 💬 Discord: [Rejoindre le serveur](https://discord.gg/votre-serveur)
-- 🐛 Issues: [GitHub Issues](https://github.com/votre-repo/issues)
+- 📧 Email: darklife.0992@gmail.com
+- 💬 Discord: nano.pasa
 
 ### Contribuer
 
