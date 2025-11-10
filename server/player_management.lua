@@ -24,7 +24,7 @@ AddEventHandler('admin:kickPlayer', function(targetId, reason)
     end
 end)
 
--- Ban un joueur
+-- Ban un joueur (avec base de données)
 RegisterNetEvent('admin:banPlayer')
 AddEventHandler('admin:banPlayer', function(targetId, reason, duration)
     local source = source
@@ -40,11 +40,53 @@ AddEventHandler('admin:banPlayer', function(targetId, reason, duration)
         duration = duration or "Permanent"
         
         local identifiers = GetPlayerIdentifiers(targetId)
-        -- Ici vous devriez sauvegarder le ban dans une base de données
-        -- Exemple de structure: identifier, reason, duration, banned_by, date
+        local primaryIdentifier = identifiers[1] -- Premier ID (steam ou license)
+        
+        -- Sauvegarder dans la base de données
+        local isPermanent = (duration == "Permanent" or duration == "permanent")
+        local durationDays = 0
+        
+        if not isPermanent then
+            -- Parser la durée (ex: "24h", "7d", "30j")
+            local number = tonumber(string.match(duration, "%d+"))
+            local unit = string.match(duration, "%a+")
+            
+            if number then
+                if unit == "h" or unit == "hours" then
+                    durationDays = number / 24
+                elseif unit == "d" or unit == "j" or unit == "days" or unit == "jours" then
+                    durationDays = number
+                elseif unit == "w" or unit == "weeks" or unit == "semaines" then
+                    durationDays = number * 7
+                elseif unit == "m" or unit == "months" or unit == "mois" then
+                    durationDays = number * 30
+                else
+                    durationDays = 7 -- Par défaut 7 jours
+                end
+            else
+                isPermanent = true
+            end
+        end
+        
+        -- Enregistrer le ban
+        local adminIdentifier = GetPlayerIdentifiers(source)[1]
+        BanPlayerDB(primaryIdentifier, targetName, reason, adminIdentifier, GetPlayerName(source), durationDays, isPermanent)
         
         SendLog('ban', source, string.format("%s - Durée: %s", reason, duration), targetId)
-        DropPlayer(targetId, string.format("Vous avez été banni du serveur.\nRaison: %s\nDurée: %s\nPar: %s", reason, duration, GetPlayerName(source)))
+        DropPlayer(targetId, string.format([[
+╔═══════════════════════════════════════╗
+║  VOUS AVEZ ÉTÉ BANNI DU SERVEUR      ║
+╠═══════════════════════════════════════╣
+║                                       ║
+║  Raison: %s
+║                                       ║
+║  Durée: %s
+║  Par: %s
+║                                       ║
+╚═══════════════════════════════════════╝
+
+💜 N-Admin - Par nano.pasa
+        ]], reason, duration, GetPlayerName(source)))
         
         TriggerClientEvent('admin:notify', source, string.format("~g~%s a été banni", targetName))
     else

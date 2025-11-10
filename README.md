@@ -20,10 +20,10 @@ Menu d'administration complet et professionnel pour serveurs RP FiveM avec inter
 
 - [Fonctionnalités](#-fonctionnalités)
 - [Installation](#-installation)
+- [Base de Données SQL](#-base-de-données-sql)
 - [Configuration](#-configuration)
 - [Utilisation](#-utilisation)
 - [Permissions](#-permissions)
-- [Screenshots](#-screenshots)
 - [Support](#-support)
 
 ---
@@ -100,6 +100,16 @@ Menu d'administration complet et professionnel pour serveurs RP FiveM avec inter
 - 💻 Logs console
 - 📜 Historique des actions
 - 🎨 Logs colorés par type d'action
+- 💾 Sauvegarde en base de données (SQL)
+
+### 💾 Base de Données SQL
+- ✅ **Bans persistants** - Bans survivent aux restarts
+- ✅ **Historique complet** - Toutes les actions sauvegardées
+- ✅ **Système de warnings** - Compteur d'avertissements
+- ✅ **Notes sur joueurs** - Annotations privées
+- ✅ **Stats admins** - Statistiques détaillées
+- ✅ **Auto-cleanup** - Nettoyage automatique des bans expirés
+- ✅ **Commandes /bans et /unban**
 
 ---
 
@@ -140,6 +150,46 @@ Menu d'administration complet et professionnel pour serveurs RP FiveM avec inter
    ```bash
    restart fivem-admin-menu
    ```
+
+---
+
+## 💾 Base de Données SQL
+
+### Installation SQL (Optionnel mais Recommandé)
+
+**Avantages :**
+- ✅ Bans persistants après restart serveur
+- ✅ Historique complet des actions
+- ✅ Système de warnings
+- ✅ Commandes /bans et /unban
+
+### Étapes d'installation
+
+1. **Installer oxmysql**
+   ```bash
+   # Télécharger: https://github.com/overextended/oxmysql/releases
+   # Extraire dans resources/oxmysql
+   ```
+
+2. **Configurer MySQL dans server.cfg**
+   ```cfg
+   set mysql_connection_string "mysql://user:password@localhost/database"
+   ensure oxmysql
+   ensure fivem-admin-menu
+   ```
+
+3. **Importer n-admin.sql**
+   - Ouvrir phpMyAdmin ou HeidiSQL
+   - Sélectionner votre base de données FiveM
+   - Importer le fichier `n-admin.sql`
+
+4. **Vérifier**
+   - Redémarrer le serveur
+   - Console devrait afficher : `[N-Admin] Base de données connectée avec succès!`
+
+📖 **[Guide complet d'installation SQL →](SQL-INSTALLATION.md)**
+
+**Sans SQL :** Le menu fonctionne mais les bans ne survivront pas aux restarts.
 
 ---
 
