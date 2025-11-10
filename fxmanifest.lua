@@ -20,6 +20,7 @@ server_scripts {
     'server/database.lua',
     'server/permissions.lua',
     'server/logs.lua',
+    'server/report_system.lua', -- ✅ NOUVEAU : Système de reports
     'server/player_management.lua',
     'server/server_management.lua',
     'server/vehicle_management.lua',

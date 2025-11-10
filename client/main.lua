@@ -50,7 +50,46 @@ end)
 -- Recevoir la liste des joueurs et ouvrir le menu
 RegisterNetEvent('admin:receivePlayerList')
 AddEventHandler('admin:receivePlayerList', function(players)
+    -- Demander aussi les reports
+    TriggerServerEvent('admin:getReports')
+    
+    Citizen.Wait(100) -- Petit délai pour recevoir les reports
     OpenMenu(players)
+end)
+
+-- Recevoir les reports
+local cachedReports = {}
+
+RegisterNetEvent('admin:receiveReports')
+AddEventHandler('admin:receiveReports', function(reports)
+    cachedReports = reports or {}
+end)
+
+-- Nouveau report reçu (notification)
+RegisterNetEvent('admin:newReport')
+AddEventHandler('admin:newReport', function(report)
+    cachedReports[report.id] = report
+    
+    -- Mettre à jour le menu si ouvert
+    SendNUIMessage({
+        action = 'newReport',
+        report = report
+    })
+    
+    -- Son de notification
+    PlaySoundFrontend(-1, "CHALLENGE_UNLOCKED", "HUD_AWARDS", true)
+end)
+
+-- Mise à jour des reports
+RegisterNetEvent('admin:updateReports')
+AddEventHandler('admin:updateReports', function(reports)
+    cachedReports = reports or {}
+    
+    -- Mettre à jour le menu si ouvert
+    SendNUIMessage({
+        action = 'updateReports',
+        reports = reports
+    })
 end)
 
 -- Event pour ouvrir le menu (depuis la commande)
@@ -79,6 +118,7 @@ function OpenMenu(players)
         players = players,
         permissions = playerPermissions,
         rank = playerRank,
+        reports = cachedReports, -- ✅ NOUVEAU : Reports
         config = {
             vehicles = Config.Vehicles,
             weathers = Config.Weathers,
@@ -303,5 +343,32 @@ RegisterCommand('fixmenu', function()
     SetNuiFocusKeepInput(true)
     SendNUIMessage({action = 'closeMenu'})
     ShowNotification("~g~Menu débloqué")
+end)
+
+-- === NUI CALLBACKS REPORTS ===
+
+RegisterNUICallback('takeReport', function(data, cb)
+    TriggerServerEvent('admin:takeReport', data.reportId)
+    cb('ok')
+end)
+
+RegisterNUICallback('gotoReporter', function(data, cb)
+    TriggerServerEvent('admin:gotoReporter', data.reportId)
+    cb('ok')
+end)
+
+RegisterNUICallback('bringReporter', function(data, cb)
+    TriggerServerEvent('admin:bringReporter', data.reportId)
+    cb('ok')
+end)
+
+RegisterNUICallback('replyReport', function(data, cb)
+    TriggerServerEvent('admin:replyReport', data.reportId, data.message)
+    cb('ok')
+end)
+
+RegisterNUICallback('resolveReport', function(data, cb)
+    TriggerServerEvent('admin:resolveReport', data.reportId)
+    cb('ok')
 end)
 

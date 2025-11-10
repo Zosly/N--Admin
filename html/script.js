@@ -6,6 +6,7 @@ let currentRank = null;
 let selectedPlayer = null;
 let currentVehicleCategory = null;
 let config = {};
+let currentReports = {}; // ✅ NOUVEAU : Reports
 
 // Message de crédits dans la console
 console.log('%c💜 N-Admin', 'color: #667eea; font-size: 20px; font-weight: bold;');
@@ -22,6 +23,15 @@ window.addEventListener('message', (event) => {
         case 'closeMenu':
             closeMenu();
             break;
+        case 'updateReports': // ✅ NOUVEAU - Mise à jour en temps réel
+            loadReports(data.reports);
+            break;
+        case 'newReport': // ✅ NOUVEAU - Notification nouveau report
+            if (currentReports) {
+                currentReports[data.report.id] = data.report;
+                loadReports(currentReports);
+            }
+            break;
     }
 });
 
@@ -31,6 +41,7 @@ function openMenu(data) {
     currentPermissions = data.permissions || [];
     currentRank = data.rank || 'unknown';
     config = data.config || {};
+    currentReports = data.reports || {}; // ✅ NOUVEAU
 
     document.getElementById('menu-container').classList.remove('hidden');
     document.getElementById('rank-badge').textContent = currentRank.toUpperCase();
@@ -49,6 +60,9 @@ function openMenu(data) {
 
     // Charger les lieux de téléportation
     loadLocations();
+    
+    // Charger les reports ✅ NOUVEAU
+    loadReports(currentReports);
 }
 
 // Fermer le menu
@@ -533,6 +547,107 @@ function teleportToLocation(coords) {
             y: coords.y,
             z: coords.z
         })
+    });
+}
+
+// === REPORTS ===
+
+function loadReports(reports) {
+    currentReports = reports || {};
+    const reportsList = document.getElementById('reports-list');
+    reportsList.innerHTML = '';
+
+    const reportArray = Object.values(currentReports);
+    
+    // Mettre à jour le badge
+    const reportCount = reportArray.length;
+    document.getElementById('report-count').textContent = reportCount;
+
+    if (reportArray.length === 0) {
+        reportsList.innerHTML = '<div class="no-reports"><p>✅ Aucun report actif</p></div>';
+        return;
+    }
+
+    reportArray.forEach(report => {
+        const reportCard = document.createElement('div');
+        reportCard.className = 'report-card';
+        if (report.status === 'taken') {
+            reportCard.classList.add('taken');
+        }
+
+        const initials = report.playerName.substring(0, 2).toUpperCase();
+        const statusText = report.status === 'pending' ? '⏳ En attente' : `✅ Pris par ${report.takenByName}`;
+        const statusClass = report.status === 'pending' ? '' : 'taken';
+
+        reportCard.innerHTML = `
+            <div class="report-header">
+                <div class="report-player">
+                    <div class="report-player-avatar">${initials}</div>
+                    <div class="report-player-info">
+                        <h4>${report.playerName}</h4>
+                        <p>ID: ${report.playerId} | ${report.timestamp} - ${report.date}</p>
+                    </div>
+                </div>
+                <div class="report-status ${statusClass}">${statusText}</div>
+            </div>
+            
+            <div class="report-message">
+                ${report.message}
+            </div>
+            
+            <div class="report-actions">
+                ${report.status === 'pending' ? `
+                    <button class="btn btn-primary" onclick="takeReport(${report.id})">✋ Prendre en charge</button>
+                ` : ''}
+                <button class="btn btn-success" onclick="gotoReporter(${report.id})">🚀 Goto</button>
+                <button class="btn btn-info" onclick="bringReporter(${report.id})">📥 Bring</button>
+                <button class="btn btn-warning" onclick="replyReport(${report.id})">💬 Répondre</button>
+                <button class="btn btn-danger" onclick="resolveReport(${report.id})">✅ Résoudre</button>
+            </div>
+        `;
+
+        reportsList.appendChild(reportCard);
+    });
+}
+
+function takeReport(reportId) {
+    fetch('https://fivem-admin-menu/takeReport', {
+        method: 'POST',
+        body: JSON.stringify({ reportId: reportId })
+    });
+}
+
+function gotoReporter(reportId) {
+    fetch('https://fivem-admin-menu/gotoReporter', {
+        method: 'POST',
+        body: JSON.stringify({ reportId: reportId })
+    });
+}
+
+function bringReporter(reportId) {
+    fetch('https://fivem-admin-menu/bringReporter', {
+        method: 'POST',
+        body: JSON.stringify({ reportId: reportId })
+    });
+}
+
+function replyReport(reportId) {
+    const message = prompt('💬 Réponse au report :');
+    if (message && message.trim() !== '') {
+        fetch('https://fivem-admin-menu/replyReport', {
+            method: 'POST',
+            body: JSON.stringify({ 
+                reportId: reportId,
+                message: message
+            })
+        });
+    }
+}
+
+function resolveReport(reportId) {
+    fetch('https://fivem-admin-menu/resolveReport', {
+        method: 'POST',
+        body: JSON.stringify({ reportId: reportId })
     });
 }
 

@@ -36,6 +36,9 @@
                 <button class="tab-btn active" data-tab="players">
                     👥 Joueurs
                 </button>
+                <button class="tab-btn" data-tab="reports">
+                    📢 Reports <span class="report-badge" id="report-count">0</span>
+                </button>
                 <button class="tab-btn" data-tab="vehicles">
                     🚗 Véhicules
                 </button>
@@ -61,6 +64,21 @@
                     
                     <div class="players-list" id="players-list">
                         <!-- Les joueurs seront ajoutés dynamiquement -->
+                    </div>
+                </div>
+
+                <!-- Reports Tab -->
+                <div class="tab-content" id="tab-reports">
+                    <div class="section">
+                        <h3>📢 Reports Actifs</h3>
+                        <div class="reports-info">
+                            💡 Les joueurs peuvent envoyer des reports avec <strong>/report [message]</strong>
+                        </div>
+                        <div class="reports-list" id="reports-list">
+                            <div class="no-reports">
+                                <p>✅ Aucun report actif</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
