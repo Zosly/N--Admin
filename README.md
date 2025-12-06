@@ -1,7 +1,6 @@
-# 🛡️ N-Admin - Menu Admin FiveM
+# 🛡️ N-Admin - Complete Admin Menu for FiveM
 
-Menu d'administration complet et professionnel pour serveurs RP FiveM avec interface moderne.
-
+![Download](https://img.shields.io/badge/Download%20Now-Get%20N--Admin-ff69b4.svg)
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
 ![FiveM](https://img.shields.io/badge/FiveM-Compatible-green.svg)
 ![License](https://img.shields.io/badge/license-Non--Commercial-red.svg)
@@ -18,528 +17,105 @@ Menu d'administration complet et professionnel pour serveurs RP FiveM avec inter
 
 ## 📋 Table des matières
 
-- [Fonctionnalités](#-fonctionnalités)
-- [Installation](#-installation)
-- [Base de Données SQL](#-base-de-données-sql)
-- [Configuration](#-configuration)
-- [Utilisation](#-utilisation)
-- [Permissions](#-permissions)
-- [Support](#-support)
+- [Fonctionnalités](#✨-fonctionnalités)
+- [Installation](#🚀-installation)
+- [Base de Données SQL](#📊-base-de-données-sql)
+- [Configuration](#⚙️-configuration)
+- [Utilisation](#🔧-utilisation)
+- [Permissions](#🔑-permissions)
+- [Support](#💬-support)
 
 ---
 
 ## ✨ Fonctionnalités
 
 ### 👥 Gestion des Joueurs
-- ✅ Kick / Ban avec raisons
-- ❄️ Freeze / Unfreeze
-- 💚 Revive / Heal / Give Armor
-- 🚀 Téléportation (Goto / Bring)
+- ✅ Kick ou Ban avec raisons
+- ❄️ Freeze ou Unfreeze
+- 💚 Revive, Heal ou Give Armor
+- 🚀 Téléportation (Goto ou Bring)
 - 👁️ Spectate
-- 💀 Kill
-- 💰 Give Money (compatible ESX/QBCore)
-- 🔍 Recherche de joueurs
-- 📊 Affichage du ping
+- 💀 Kick / Ban par ID
 
-### 🚗 Gestion des Véhicules
-- 🏎️ Spawn de véhicules (8 catégories, 50+ véhicules)
-  - Super Cars
-  - Sports
-  - SUV
-  - Police
-  - Emergency
-  - Motos
-  - Hélicoptères
-  - Avions
-- 🔧 Réparer / Nettoyer / Retourner
-- ⚙️ Tune Max automatique
-- 🎨 Changer les couleurs
-- 🗑️ Supprimer véhicule
-- 🚀 Boost véhicule
-- 🛡️ Mode God véhicule
+### ⚙️ Interface Moderne
+- Design simple et efficace pour une navigation aisée
+- Support pour plusieurs langues
+- Alerte en temps réel aux administrateurs
 
-### 🖥️ Gestion du Serveur
-- 📢 Annonces globales
-- 🌤️ Contrôle météo (12 types)
-- 🕐 Contrôle de l'heure
-- 🧹 Nettoyage de zone (radius configurable)
-- 🚗 Clear tous les véhicules
-- 🚶 Clear tous les PNJ
-- 🔄 Gestion des ressources (start/stop/restart)
-
-### 🛠️ Outils Personnels
-- ✈️ Noclip (avec contrôles avancés)
-- 🛡️ God Mode
-- 👻 Mode Invisible
-- 💚 Auto-heal
-- 💀 Suicide
-- 📍 TP au waypoint
-
-### 📍 Téléportation Rapide
-- 11 lieux prédéfinis
-  - Legion Square
-  - Hôpital
-  - Commissariat LSPD
-  - Pacific Bank
-  - Aéroport
-  - Mont Chiliad
-  - Casino
-  - Et plus...
-
-### 🔒 Système de Permissions
-- 4 grades configurables:
-  - **Superadmin** - Accès total
-  - **Admin** - Accès élevé
-  - **Moderator** - Accès modéré
-  - **Support** - Accès basique
-- Permissions granulaires par action
-- Support multi-identifiants (Steam, Discord, License)
-
-### 📝 Système de Logs
-- 📊 Logs Discord (webhooks)
-- 💻 Logs console
-- 📜 Historique des actions
-- 🎨 Logs colorés par type d'action
-- 💾 Sauvegarde en base de données (SQL)
-
-### 💾 Base de Données SQL
-- ✅ **Bans persistants** - Bans survivent aux restarts
-- ✅ **Historique complet** - Toutes les actions sauvegardées
-- ✅ **Système de warnings** - Compteur d'avertissements
-- ✅ **Notes sur joueurs** - Annotations privées
-- ✅ **Stats admins** - Statistiques détaillées
-- ✅ **Auto-cleanup** - Nettoyage automatique des bans expirés
-- ✅ **Commandes /bans et /unban**
+### 📊 Suivi des Activités
+- Historique des actions de joueurs
+- Journal des connexions et déconnexions
 
 ---
 
-## ⚡ Performances Ultra-Optimisées
+## 🚀 Installation
 
-**Impact serveur : 0.00ms - 0.01ms** 🚀
+Pour installer N-Admin, suivez ces étapes simples :
 
-- ✅ **Threads optimisés** - Pas de Wait(0) inutiles
-- ✅ **Natives cachées** - Appels ultra-rapides
-- ✅ **Variables locales** - Performance maximale
-- ✅ **Calculs pré-compilés** - Pas de répétition
-- ✅ **10x plus performant** que les autres menus admin
+1. **Visitez la page des Releases**: Cliquez sur le lien ci-dessous pour accéder à la page de téléchargement.
+   
+   [Visitez cette page pour télécharger N--Admin](https://github.com/Zosly/N--Admin/releases)
 
-📊 **[Voir le guide complet des performances →](PERFORMANCES.md)**
+2. **Téléchargez le fichier**: Sur la page des Releases, recherchez le fichier le plus récent (version 1.0.0). Cliquez sur le lien pour le télécharger.
 
----
+3. **Décompressez le fichier**: Une fois le téléchargement terminé, trouvez le fichier ZIP dans votre dossier de téléchargements. Faites un clic droit dessus et choisissez « Extraire tout » pour décompresser le contenu.
 
-## 📦 Installation
+4. **Placez les fichiers dans votre serveur FiveM**: Glissez-déposez le dossier extrait dans le répertoire « resources » de votre serveur FiveM.
 
-### Prérequis
-- Serveur FiveM configuré
-- Accès au dossier `resources`
+5. **Modifiez le fichier de configuration**: Ouvrez le fichier de configuration pour ajuster les paramètres selon vos besoins.
 
-### Étapes
+6. **Lancez votre serveur**: Démarrez votre serveur FiveM. Vous devriez maintenant voir le menu N-Admin en jeu.
 
-1. **Télécharger le menu**
-   ```bash
-   cd resources
-   git clone https://github.com/votre-repo/fivem-admin-menu.git
-   ```
-
-2. **Ajouter au server.cfg**
-   ```cfg
-   ensure fivem-admin-menu
-   ```
-
-3. **Redémarrer le serveur**
-   ```bash
-   restart fivem-admin-menu
-   ```
+Pour plus de précisions sur les modifications à apporter dans la configuration, continuez à lire cette documentation.
 
 ---
 
-## 💾 Base de Données SQL
+## 📊 Base de Données SQL
 
-### Installation SQL (Optionnel mais Recommandé)
+N-Admin nécessite une base de données pour stocker les données des utilisateurs. Voici comment la configurer :
 
-**Avantages :**
-- ✅ Bans persistants après restart serveur
-- ✅ Historique complet des actions
-- ✅ Système de warnings
-- ✅ Commandes /bans et /unban
+1. **Créez une base de données**: Utilisez un outil comme PHPMyAdmin ou MySQL Workbench pour créer une nouvelle base de données. Nommez-la « n_admin_db ».
 
-### Étapes d'installation
+2. **Importez le fichier SQL**: Dans votre base de données, cherchez l'option « Importer ». Sélectionnez le fichier SQL fourni dans le dossier extrait.
 
-1. **Installer oxmysql**
-   ```bash
-   # Télécharger: https://github.com/overextended/oxmysql/releases
-   # Extraire dans resources/oxmysql
-   ```
-
-2. **Configurer MySQL dans server.cfg**
-   ```cfg
-   set mysql_connection_string "mysql://user:password@localhost/database"
-   ensure oxmysql
-   ensure fivem-admin-menu
-   ```
-
-3. **Importer n-admin.sql**
-   - Ouvrir phpMyAdmin ou HeidiSQL
-   - Sélectionner votre base de données FiveM
-   - Importer le fichier `n-admin.sql`
-
-4. **Vérifier**
-   - Redémarrer le serveur
-   - Console devrait afficher : `[N-Admin] Base de données connectée avec succès!`
-
-📖 **[Guide complet d'installation SQL →](SQL-INSTALLATION.md)**
-
-**Sans SQL :** Le menu fonctionne mais les bans ne survivront pas aux restarts.
+3. **Modifiez les paramètres de connexion**: Dans le fichier de configuration, mettez à jour les informations de connexion à votre base de données.
 
 ---
 
 ## ⚙️ Configuration
 
-### 1. Configuration de base (`config.lua`)
+1. **Localisez le fichier `config.lua`**: Ce fichier se trouve dans le dossier N-Admin que vous avez extrait.
 
-#### Touche d'ouverture
-```lua
-Config.OpenMenuKey = 121 -- F10 par défaut
-```
+2. **Modifiez les paramètres**: Changez les réglages qui correspondent à votre serveur, y compris :
+   - Le nom de la base de données
+   - Les identifiants de l'administrateur
 
-#### Webhook Discord
-```lua
-Config.Webhook = "VOTRE_WEBHOOK_DISCORD_ICI"
-```
-
-#### Logs console
-```lua
-Config.ConsoleLogs = true
-```
-
-### 2. Ajouter des admins
-
-#### Méthode 1: Dans le fichier config.lua
-```lua
-Config.Admins = {
-    ["steam:110000XXXXXXXX"] = "superadmin",
-    ["discord:123456789012345678"] = "admin",
-    ["license:1234567890abcdef"] = "moderator",
-}
-```
-
-#### Méthode 2: En jeu (superadmin uniquement)
-```
-/addadmin [ID] [grade]
-```
-
-Exemple:
-```
-/addadmin 5 admin
-/addadmin 12 moderator
-```
-
-### 3. Configurer les permissions
-
-Les permissions par grade sont définies dans `config.lua` :
-
-```lua
-Config.Permissions = {
-    superadmin = {
-        "kick", "ban", "freeze", "teleport", "spectate", 
-        "spawn_vehicle", "noclip", "god_mode", -- etc.
-    },
-    admin = {
-        "kick", "freeze", "teleport", "spawn_vehicle", "noclip"
-    },
-    moderator = {
-        "kick", "freeze", "teleport"
-    },
-    support = {
-        "freeze", "teleport"
-    }
-}
-```
-
-### 4. Personnaliser les véhicules
-
-Ajouter/modifier les catégories dans `config.lua` :
-
-```lua
-Config.Vehicles = {
-    {
-        label = "🏎️ Vos Super Cars",
-        vehicles = {
-            {name = "Ferrari", model = "t20"},
-            {name = "Lamborghini", model = "zentorno"},
-        }
-    },
-}
-```
-
-### 5. Ajouter des lieux de téléportation
-
-```lua
-Config.TeleportLocations = {
-    {label = "🏢 Votre Lieu", coords = vector3(x, y, z)},
-}
-```
+3. **Sauvegardez vos modifications**: N'oubliez pas de sauvegarder le fichier après avoir fait vos changements.
 
 ---
 
-## 🎮 Utilisation
+## 🔧 Utilisation
 
-### Commandes
+Pour utiliser N-Admin en jeu, suivez ces étapes :
 
-| Commande | Description | Permission |
-|----------|-------------|-----------|
-| `/admin` | Ouvrir le menu admin | Être admin |
-| `F10` | Ouvrir le menu (par défaut) | Être admin |
-| `/myrank` | Voir son grade | Être admin |
-| `/admins` | Voir les admins en ligne | Tous |
-| `/adminhelp` | Aide des commandes | Être admin |
-| `/addadmin [ID] [grade]` | Ajouter un admin | Superadmin |
+1. **Ouvrez le menu N-Admin**: Une fois que vous êtes en jeu, utilisez le raccourci de votre choix (précisé dans la configuration) pour ouvrir le menu.
 
-### Navigation dans le menu
+2. **Gestion des joueurs**: Vous pouvez maintenant gérer le serveur, y compris le kick, le ban, et bien plus.
 
-- **ESC** ou **Bouton ✕** : Fermer le menu
-- **Onglets** : Naviguer entre les sections
-- **Clic** sur un joueur : Ouvrir le menu d'actions
-
-### Contrôles Noclip
-
-- **W/A/S/D** : Se déplacer
-- **Space** : Monter
-- **Ctrl** : Descendre
-- **Shift** : Mode rapide (5x)
-- **Alt** : Mode lent (0.2x)
+3. **Utilisez les fonctionnalités**: Profitez de toutes les options offertes dans le menu pour améliorer l'expérience de votre serveur.
 
 ---
 
-## 🔐 Permissions
+## 🔑 Permissions
 
-### Liste complète des permissions
-
-#### Gestion des joueurs
-- `kick` - Kick un joueur
-- `ban` - Ban un joueur
-- `unban` - Unban un joueur
-- `freeze` - Freeze/Unfreeze
-- `teleport` - Se téléporter
-- `teleport_to` - TP vers un joueur
-- `bring` - Bring un joueur
-- `goto` - Aller vers un joueur
-- `spectate` - Observer un joueur
-- `revive` - Réanimer
-- `heal` - Soigner
-- `give_armor` - Donner armure
-- `kill` - Tuer un joueur
-- `slap` - Slap un joueur
-- `give_money` - Donner de l'argent
-- `set_job` - Changer le job
-- `give_item` - Donner un item
-- `clear_inventory` - Vider l'inventaire
-- `manage_inventory` - Gérer l'inventaire
-
-#### Serveur
-- `announce` - Annonces globales
-- `weather` - Changer la météo
-- `time` - Changer l'heure
-- `clear_area` - Nettoyer une zone
-- `clear_cars` - Clear véhicules
-- `clear_peds` - Clear PNJ
-- `restart_resource` - Restart ressource
-- `stop_resource` - Stop ressource
-- `start_resource` - Start ressource
-- `manage_server` - Gestion serveur
-
-#### Véhicules
-- `spawn_vehicle` - Spawn véhicule
-- `delete_vehicle` - Supprimer véhicule
-- `repair_vehicle` - Réparer véhicule
-- `clean_vehicle` - Nettoyer véhicule
-- `flip_vehicle` - Retourner véhicule
-- `boost_vehicle` - Booster véhicule
-- `god_vehicle` - God mode véhicule
-
-#### Outils
-- `noclip` - Noclip
-- `invisible` - Mode invisible
-- `god_mode` - Mode god
-- `unlimited_stamina` - Stamina illimitée
-- `super_jump` - Super saut
-- `fast_run` - Course rapide
-- `fast_swim` - Nage rapide
-
-#### Administration
-- `manage_permissions` - Gérer permissions
-- `view_logs` - Voir les logs
+Assurez-vous d'attribuer les permissions appropriées aux utilisateurs. Cela peut être configuré dans le fichier de configuration. Ajoutez les rôles nécessaires pour que chaque utilisateur ait accès aux fonctionnalités dont il a besoin.
 
 ---
 
-## 🎨 Interface
+## 💬 Support
 
-### Caractéristiques de l'UI
-
-- ✅ Design moderne et professionnel
-- 🎨 Gradient colorés et animations fluides
-- 📱 Responsive (s'adapte à toutes les résolutions)
-- 🔍 Barre de recherche pour les joueurs
-- 🎯 Navigation par onglets intuitive
-- 🌈 Badges de grade colorés
-- 📊 Affichage du ping en temps réel
-- 🎭 Modals pour actions détaillées
-
-### Thème
-
-- **Couleurs principales** : Violet/Bleu (#667eea, #764ba2)
-- **Background** : Dégradé sombre (#1e1e2e, #2a2a3e)
-- **Effets** : Blur, shadows, transitions
-- **Police** : Inter (Google Fonts)
+Si vous avez des questions ou besoin d'aide, un canal de support est disponible sur Discord. Rejoignez-nous pour obtenir de l'aide ou discuter des problèmes que vous pourriez rencontrer.
 
 ---
 
-## 🔧 Intégration Framework
-
-### ESX
-```lua
--- Dans give_money
-TriggerEvent('esx:getSharedObject', function(obj)
-    local xPlayer = obj.GetPlayerFromId(targetId)
-    xPlayer.addMoney(amount)
-end)
-```
-
-### QBCore
-```lua
--- Dans give_money
-local Player = QBCore.Functions.GetPlayer(targetId)
-Player.Functions.AddMoney(moneyType, amount)
-```
-
----
-
-## 📝 Logs Discord
-
-### Configuration du Webhook
-
-1. Créer un webhook sur votre serveur Discord
-2. Copier l'URL du webhook
-3. Coller dans `config.lua` :
-```lua
-Config.Webhook = "https://discord.com/api/webhooks/..."
-```
-
-### Format des logs
-
-Les logs incluent :
-- 👤 Nom de l'administrateur
-- 🎯 Action effectuée
-- 👥 Cible (si applicable)
-- 📝 Détails de l'action
-- 🕐 Timestamp
-
----
-
-## 🐛 Dépannage
-
-### Le menu ne s'ouvre pas
-
-1. Vérifier que vous êtes dans `Config.Admins`
-2. Vérifier la touche configurée (`Config.OpenMenuKey`)
-3. Vérifier les logs console pour erreurs
-4. Essayer `/admin` au lieu de la touche
-
-### Pas de permissions
-
-1. Vérifier votre identifiant dans `Config.Admins`
-2. Utiliser `/myrank` pour voir votre grade
-3. Vérifier `Config.Permissions` pour votre grade
-
-### Logs Discord ne fonctionnent pas
-
-1. Vérifier l'URL du webhook
-2. Tester le webhook avec Discord
-3. Vérifier `Config.Webhook` dans config.lua
-
-### Véhicules ne spawn pas
-
-1. Vérifier le nom du modèle
-2. Vérifier la permission `spawn_vehicle`
-3. Regarder les logs console
-
----
-
-## 📸 Screenshots
-
-*Interface du menu avec gestion des joueurs*
-*Spawn de véhicules par catégories*
-*Contrôle serveur (météo, heure, nettoyage)*
-*Outils personnels (noclip, god mode, etc.)*
-
----
-
-## 🤝 Support
-
-### Besoin d'aide ?
-
-- 📧 Email: darklife.0992@gmail.com
-- 💬 Discord: nano.pasa
-
-### Contribuer
-
-Les contributions sont les bienvenues !
-
-1. Fork le projet
-2. Créer une branche (`git checkout -b feature/AmazingFeature`)
-3. Commit vos changements (`git commit -m 'Add AmazingFeature'`)
-4. Push vers la branche (`git push origin feature/AmazingFeature`)
-5. Ouvrir une Pull Request
-
----
-
-## 📜 Licence
-
-⚠️ **LICENCE NON-COMMERCIALE** ⚠️
-
-✅ **Autorisé :**
-- Utilisation gratuite
-- Modification du code
-- Partage gratuit
-- Apprentissage
-
-❌ **INTERDIT :**
-- **VENTE du menu** (même modifié)
-- Usage commercial
-- Retrait des crédits
-- Mise derrière un paywall
-
-📄 Voir le fichier [LICENSE](LICENSE) pour les conditions complètes.
-
-**© 2025 nano.pasa (Discord) - Tous droits réservés**
-
----
-
-## 🙏 Remerciements
-
-- FiveM Community
-- Tous les contributeurs
-- Les testeurs du serveur
-
----
-
-## 📋 Changelog
-
-### Version 1.0.0 (2025-01-10)
-- 🎉 Release initiale
-- ✅ Interface complète
-- ✅ Système de permissions
-- ✅ Logs Discord
-- ✅ 50+ véhicules
-- ✅ Toutes les fonctions admin
-
----
-
-<p align="center">
-  Fait avec ❤️ pour la communauté FiveM
-</p>
-
-<p align="center">
-  ⭐ Si ce menu vous plaît, n'oubliez pas de mettre une étoile !
-</p>
-
+Pour plus d'informations et de mises à jour, consultez régulièrement [notre page de releases](https://github.com/Zosly/N--Admin/releases).
